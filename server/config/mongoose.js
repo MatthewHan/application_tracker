@@ -1,7 +1,7 @@
 mongoose = require('mongoose');
 var fs = require('fs');
 
-mongoose.connect('mongodb://localhost/theNetworkSchema');
+mongoose.connect('mongodb://localhost/applicationTracker');
 
 var models_path = __dirname + '/../models';
 

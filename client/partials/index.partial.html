@@ -1,0 +1,38 @@
+<div class="col-md-12">
+	<h1>Job Appplications</h1>
+	<a class="btn btn-success" href="#/jobs/new">Log New Application</a>
+	<div class="form-group">
+		<label for="">Search</label>
+		<input class="form-control" type="text" ng-model="filter_name">
+	</div>
+	<div class="table-container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Date Applied</th>
+					<th>Job Name</th>
+					<th>Job URL</th>
+					<th>Priority</th>
+					<th>Recruiter Name</th>
+					<th>Hiring Manager Name</th>
+					<th>Followed Up</th>
+					<th>Followed Up Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="job in main.jobs | filter:filter_name">
+					<td>{{ job.applied_on | date }}</td>
+					<td>{{ job.job_name }}</td>
+					<td><a href="{{ job.job_url }}">{{ job.job_url }}</a></td>
+					<td class="{{job.priority}}">{{ job.priority }}</td>
+					<td>{{ job.recruiter_name }}</td>
+					<td>{{ job.hiring_manager_name }}</td>
+					<td>{{ job.followed_up }}</td>
+					<td>{{ job.follwed_up_date | date }}</td>
+					<td><button ng-click="main.show(job.id)">Edit</button></td>
+					<td><button ng-click="main.destroy(job.id)">Delete</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
