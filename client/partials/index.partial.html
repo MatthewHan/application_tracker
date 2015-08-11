@@ -23,8 +23,8 @@
 				<tr ng-repeat="job in main.jobs | filter:filter_name">
 					<td>{{ job.applied_on | date }}</td>
 					<td>{{ job.job_name }}</td>
-					<td><a href="{{ job.job_url }}">{{ job.job_url }}</a></td>
-					<td class="{{job.priority}}">{{ job.priority }}</td>
+					<td><a href="{{ job.job_url }}">Link</a></td>
+					<td ng-class="{{job.priority}}">{{ job.priority }}</td>
 					<td>{{ job.recruiter_name }}</td>
 					<td>{{ job.hiring_manager_name }}</td>
 					<td>{{ job.followed_up }}</td>
